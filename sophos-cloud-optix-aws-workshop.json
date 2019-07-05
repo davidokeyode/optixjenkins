@@ -1366,7 +1366,7 @@
                 "yum install -y httpd || error_exit 'Failed to install Apache' \n",
                 "/sbin/service httpd start || error_exit 'Failed to start Apache' \n",
                 "cd /var/www/html \n",
-                "echo '<html><h1>Hello from Dome9!</h1></html>' > index.html \n",
+                "echo '<html><h1>Cloud Optix WorkShop</h1></html>' > index.html \n",
                 "# We got here without issues (except as signaled), so signal success\n",
                 "/opt/aws/bin/cfn-signal -e 0 -r \"User data script complete\" '",  "'\n"
               ]
