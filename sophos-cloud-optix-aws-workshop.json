@@ -561,7 +561,7 @@
     "S3Bucket1": {
       "Type": "AWS::S3::Bucket",
       "Properties": {
-        "AccessControl": "PublicRead"
+        "AccessControl": "Private"
       }
     },
      "S3Bucket2": {
@@ -570,39 +570,7 @@
                 "AccessControl": "Private"
                 }
             },
-    "S3BucketPolicy2": {
-            "Type": "AWS::S3::BucketPolicy",
-            "Properties": {
-                "PolicyDocument": {
-                    "Id": "MyPolicy",
-                    "Version": "2012-10-17",
-                    "Statement": [
-                        {
-                            "Sid": "Put",
-                            "Effect": "Allow",
-                            "Principal": "*",
-                            "Action": "s3:GetObject",
-                            "Resource": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        "arn:aws:s3:::",
-                                        {
-                                            "Ref": "S3Bucket2"
-                                        },
-                                        "/*"
-                                    ]
-                                ]
-                            }
-                        }
-                    ]
-                },
-                "Bucket": {
-                    "Ref": "S3Bucket2"
-                }
-            }
-        },
-     "S3Bucket3": {
+        "S3Bucket3": {
            "Type": "AWS::S3::Bucket",
             "Properties": {
                "AccessControl": "Private"
